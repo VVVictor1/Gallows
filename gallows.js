@@ -38,8 +38,7 @@ function handleGuess(button) {
         if (randomWord[indexword] === letterGuess){
                                               //'sister' letter s
             occurrenceLetter.push(indexword); // [0, 2]
-        }
-        
+        }        
     }
 
     if (occurrenceLetter.length !== 0 && lifes !== 1){
@@ -47,8 +46,7 @@ function handleGuess(button) {
         for (let k = 0; k < occurrenceLetter.length; ++k){
             updateWordGuess(occurrenceLetter[k], letterGuess);// occurrenceLetter[0] = 0, occurrenceLetter[1] = 2;
             button.style.visibility = "hidden";
-            ++winner;
-              
+            ++winner;              
         }
         if (lifes > 0 && winner === randomWord.length) {
             lifeLeft.innerHTML = lifes;
@@ -66,10 +64,8 @@ function handleGuess(button) {
             }else if (lifes === 1){
                 showLost.innerHTML = 'You Lost!';
                 resultGame.innerHTML = 'Game over';
-            }
-                
+            }              
         }
-
     }
  };
 
@@ -86,5 +82,3 @@ for (let i = 97; i <= 122; ++i){
         handleGuess(button);
       });
 }
-
-  
